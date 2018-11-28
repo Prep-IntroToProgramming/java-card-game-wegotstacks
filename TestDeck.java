@@ -2,6 +2,8 @@ import java.util.*;
 public class TestDeck{
     static void main(){
         Deck Joker=new Deck();
-        System.out.println("Our first card is " + Joker.cards.get(0));
+        System.out.println("Our first card is " + Joker.cards.get(0).rankToString());
+        Joker.draw();
+        System.out.println("Our first card is " + Joker.cards.get(0).rankToString());
     }
 }
