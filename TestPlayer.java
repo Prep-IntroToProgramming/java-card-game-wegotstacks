@@ -5,13 +5,14 @@ public class TestPlayer{
         g.decko.shuffle();
         g.deal();
         g.p.showHand();
-        //g.d.showHand();
+        g.d.dealerHand();
         //System.out.println(p.name);
         g.choice();
         g.p.showHand();
+        g.p.score();
+        g.dealerPlay();
     } 
     
-
     static void showHand(){
         ArrayList<Card> hand = new  ArrayList<Card>();
         
