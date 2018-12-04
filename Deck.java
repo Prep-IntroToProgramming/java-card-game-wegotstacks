@@ -17,5 +17,18 @@ class Deck{
     void shuffle(){
         Collections.shuffle(cards);
     }
-   
+    int count(){
+        return cards.size();
+    }
+    void discard(){
+        //Card draWed = cards.get(0);
+        cards.remove(0);
+        //return draWed;
+    }
+    Card randomDraw(){
+        int x = (int) (Math.random()*cards.size());
+        Card draWed = cards.get(x);
+        cards.remove(x);
+        return draWed;
+    }
 }
