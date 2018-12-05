@@ -46,6 +46,12 @@ public class Game{
 
     }
 
+    void checkForBlackJack(){
+        if (d.getScore()==21){
+            System.out.println("Dealer wins!!");
+        }
+    }
+    
     void winner(){
         if (p.getScore()>d.getScore() && p.getScore()<=21){ 
             System.out.println("You ("+p.name+") won because your score was higher!!");

@@ -3,21 +3,14 @@ public class PlayBlackJack{
     static void main(){
         Game g =new Game();
         g.decko.shuffle();
-        g.p.chooseName();
+        g.p.chooseName(); //bonus
         g.deal();
         g.p.showHand();
         g.d.dShowHand();
-        g.choice();
-        g.p.score();
-        g.dealerPlay();
+        g.choice(); //player has to go before the dealer
+        //g.p.score();
+        g.dealerPlay(); 
         g.d.dealerHand();
-        g.winner();
+        g.winner(); //checks at the end to see who wins (why it's named winner)
     } 
-
-    static void showHand(){
-        ArrayList<Card> hand = new  ArrayList<Card>();
-        for (Card s:hand){
-            System.out.println("You have "+s.rankToString());
-        }
-    }
 }

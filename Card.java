@@ -82,7 +82,7 @@ public class Card {
             return null;
         }    
     }
-    public String rankToString() {
+    public String rankToString() { //overlayed so that we can use it easily
         if (rank == ACE) {
             return "Ace";
         } else if (rank == DEUCE) {
@@ -129,7 +129,7 @@ public class Card {
             return null;
         }
     }
-    public  String suitToString() {
+    public  String suitToString() { //overlayed like the rankToString()
         if (suit ==DIAMONDS){
             return "Diamonds";
         } else if (suit ==CLUBS){
@@ -142,8 +142,8 @@ public class Card {
             return null;
         }
     }
-    public static String SuitToString(int suit){
-        switch (suit){
+    public static String SuitToString(int suit){ //different because "Suit"
+        switch (suit){ //accomplishes the same as the first suitToString()
             case DIAMONDS:
             return "Diamonds";
             case CLUBS:

@@ -1,6 +1,6 @@
 import java.util.*;
 public class Player{
-    String name = "Arthur Morgan";
+    String name = "Arthur Morgan"; //I want this to be the default name
     Scanner input = new Scanner(System.in);
     ArrayList<Card> hand = new  ArrayList<Card>();
     void chooseName(){
@@ -13,7 +13,11 @@ public class Player{
             System.out.println("You ("+ name+") have "+s.rankToString());
         }
     }
-    
+    void dealerHand(){
+        for (Card s:hand){
+            System.out.println("Dealer has "+s.rankToString());
+        }
+    }
     void dShowHand(){
         System.out.println("Dealer is hiding his first card");
         for (int i=1; i<hand.size(); i++){
@@ -21,18 +25,12 @@ public class Player{
             System.out.println("Dealer has "+hand.get(i).rankToString());
         }
     }
-    
-    void dealerHand(){
-        for (Card s:hand){
-            System.out.println("Dealer has "+s.rankToString());
-        }
-    }
 
-    void add(Card q){
+    void add(Card q){ //just how hitting happens
         hand.add(q);
     }
 
-    void score(){
+    void score(){ //Calculates score based off our class discussion
         int handVal = 0;
         boolean acePresent = false;
         for (Card q: hand){
@@ -44,15 +42,13 @@ public class Player{
             if (q.rank ==1){
                 acePresent = true;
             }
-
         }
         if (handVal <=11 && acePresent){
             handVal = 10+handVal;
-        }
-      
+        }     
     }
 
-    int getScore(){
+    int getScore(){ //need to have this in order to actually use the calculated score
         int handVal = 0;
         boolean acePresent = false;
         for (Card q: hand){
