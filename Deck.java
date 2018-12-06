@@ -14,18 +14,23 @@ class Deck{
         return draWed;
     }
     void shuffle(){
-        Collections.shuffle(cards); //the shuffle method is part of java.util.*
+        Collections.shuffle(cards); //the shuffle method is part of the ArrayList methods
     }
     int count(){
         return cards.size();
     }
-    void discard(){ //just removes a card and forgets about it
+    void discard(){ //just removes a card from the top and forgets about it
         cards.remove(0);
     }
     Card randomDraw(){ //this is for the bonus
-        int x = (int) (Math.random()*cards.size());
+        int x = (int) (Math.random()*cards.size()); //random integer generated for which spot to draw from
         Card draWed = cards.get(x);
         cards.remove(x);
         return draWed;
+    }
+    void showDeck(){ //just to check that the deck does everything it's expected to
+        for (Card s:cards){
+            System.out.println(s.rankToString());
+        }
     }
 }

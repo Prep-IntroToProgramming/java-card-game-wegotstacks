@@ -27,27 +27,27 @@ public class Game{
             p.showHand();
         } else if (x ==1){ 
             p.add(decko.draw());
-            p.showHand();
-            choice();
+            p.showHand(); //so the player can see their whole hand easily
+            choice(); //without this, we could only hit once
         } else {
             System.out.println("YOU IDIOT PRESS 1 OR 0");
-            choice();
+            choice(); //starts it from the beginning
         }
 
     }
 
-    void dealerPlay(){
+    void dealerPlay(){ //dealer obviously doesn't have a choice
 
         while (d.getScore()<=16){ //dealer automatically draws when score is less than 17
-            Card drawn = decko.draw();
-            d.add(drawn);
+            Card drawn = decko.draw(); //need to make a variable to say what
+            d.add(drawn); //card specifically the dealer drew
             System.out.println("Dealer drew a "+drawn.rankToString());
         }
 
     }
 
-    void checkForBlackJack(){
-        if (d.getScore()==21){
+    void checkForBlackJack(){ //our game automatically gives the winner who is closest but not over 21
+        if (d.getScore()==21){ //no point in making this for the player, if they go over it's their fault
             System.out.println("Dealer wins!!");
         }
     }
